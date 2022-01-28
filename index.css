@@ -1,40 +1,46 @@
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-
-
 }
 
-.book-image{
-    background-image:url("book.jpg");
-    background-attachment: fixed;
-    background-color: #cccccc;
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+h2{
+    color:green;
+}
+.wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 2px;
+  }
+
+.section { 
     position: relative;
-    transition: all 2s;
-
-
-}
-.book-text {
-    text-align: center;
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    font-weight:bold;
+    text-shadow: 0 0 5px #000;
   }
-.book-image:hover{
-    -ms-transform: translate(0px,100px); /* IE 9 */
-   -webkit-transform: translate(0px,100px); /* Safari */
-    transform: translate(0px,100px); /* Standard syntax */
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px);
+    background-size: 100%;
+    z-index: -1;
+    background-attachment: fixed;
+  }
+.static {
+    background-color: green;
+  }
+.bg1::after{
+    background-image:url("background1.jpg");
+
 }
-
-
-  .example{
-      height:500px;
-      background-color: red;
-  }
+.bg2::after{
+    background-image:url("background2.png");
+    
+}
